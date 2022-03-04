@@ -1,0 +1,14 @@
+title twitflow sequence diagram
+
+Client->Twitflow Controller: Start stream message
+Twitflow Controller->+Twitter API: Start streaming request
+
+loop realtime streaming
+Twitter API->Twitter API: Produce Tweet stream
+Twitter API-->Twitflow Controller: Tweet stream response
+Twitflow Controller->Twitflow Controller: Consume tweet stream
+Twitflow Controller->Client: Tweet message
+end
+
+Client->Twitflow Controller: Stop stream message
+destroy Twitter API

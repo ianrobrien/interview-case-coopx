@@ -1,0 +1,47 @@
+package no.obrien.twitflow;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import com.twitter.models.Expansions;
+import com.twitter.models.StreamingTweet;
+import com.twitter.models.Tweet;
+import com.twitter.models.User;
+import no.obrien.twitflow.mapper.TweetDtoMapper;
+import no.obrien.twitflow.model.TweetDto;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import java.time.OffsetDateTime;
+
+@SpringBootTest
+class TweetDtoMapperTest {
+
+  @Autowired
+  private TweetDtoMapper tweetDtoMapper;
+
+  @Test
+  void fromStreamingTweet_validInput_mapsWithoutIssue() {
+    OffsetDateTime now = OffsetDateTime.now();
+
+    Tweet tweet = new Tweet()
+        .text("this is the tweet text")
+        .authorId("12345")
+        .createdAt(now);
+
+    User author = new User()
+        .id("12345")
+        .username("AuthorUsername");
+
+    Expansions expansions = new Expansions().addUsersItem(author);
+
+    StreamingTweet streamingTweet = new StreamingTweet();
+    streamingTweet.setData(tweet);
+    streamingTweet.setIncludes(expansions);
+
+    TweetDto tweetDto = tweetDtoMapper.fromStreamingTweet(streamingTweet);
+
+    assertEquals(tweetDto.getText(), tweet.getText());
+    assertEquals(tweetDto.getAuthor(), author.getUsername());
+  }
+}

@@ -1,0 +1,9 @@
+spring:
+  config:
+    activate:
+      on-profile: prod
+twitter:
+  api:
+    bearer-token: ${twitter.api.bearer.token}
+logging:
+  level: info

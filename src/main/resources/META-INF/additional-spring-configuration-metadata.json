@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "twitter.api.bearer-token",
+      "type": "java.lang.String",
+      "description": "Description for twitter.api.bearer-token."
+    }
+  ]
+}
