@@ -1,6 +1,6 @@
 # twitflow
 
-![CI/CD Pipeline](https://github.com/ianrobrien/twitflow/actions/workflows/cicd.yml/badge.svg)
+[![Continuous Integration](https://github.com/ianrobrien/twitflow/actions/workflows/ci.yaml/badge.svg)](https://github.com/ianrobrien/twitflow/actions/workflows/ci.yaml)
 
 This repository is a demonstration of making a web application to stream realtime Tweets from Twitter using the [Twitter API](https://developer.twitter.com/en/docs/twitter-api)
 
