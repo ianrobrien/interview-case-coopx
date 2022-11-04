@@ -9,7 +9,7 @@ RUN mvn -f /home/app/pom.xml clean package
 #
 # Package stage
 #
-FROM openjdk:19-slim-buster@sha256:5d9241a0947897f2be3deb641df1e04e5a2bac3e45e123a6e5d59f9c1d42d4c3
+FROM amazoncorretto:19-alpine3.16-jdk@sha256:b56e93c64f61233c016f1a94ae67ef37761adba65b2ecbd74c4579cbae2b44ed
 COPY --from=build /home/app/target/twitflow-0.0.1-SNAPSHOT.jar /usr/local/lib/twitflow.jar
 ARG TWITTER_API_BEARER_TOKEN=$TWITTER_API_BEARER_TOKEN
 EXPOSE 8080
