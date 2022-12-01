@@ -1,7 +1,7 @@
 #
 # Build stage
 #
-FROM maven:3.8.6-openjdk-18-slim@sha256:1651ffc25c1d9fd703b3af3b3a5b5e76726e1bd5a98ad6d8c2b51c2861c213cd AS build
+FROM maven:3.8.6-openjdk-18-slim@sha256:5f5d98aeb8e6b008cc1d9e6bb7731c42219c21431732ed6487ec8c3e2606db31 AS build
 COPY . /home/app/
 ARG TWITTER_API_BEARER_TOKEN=$TWITTER_API_BEARER_TOKEN
 RUN mvn -f /home/app/pom.xml clean package
