@@ -5,7 +5,7 @@
 This repository is a demonstration of making a web application to stream realtime
 Tweets from Twitter using the [Twitter API](https://developer.twitter.com/en/docs/twitter-api)
 
-## Case Introdution
+## Case Introduction
 
 Please see the [PDF document](doc/coopx-case.pdf) in the `doc` folder.
 
@@ -61,7 +61,7 @@ requested. The styling is from [Bootstrap](https://getbootstrap.com/).
 
 ## Deploying the solution
 
-The [CI/CD pipeline](.github/workflows/cicd.yml) is implemented in GitHub
+The [CI Pipeline](.github/workflows/ci.yaml) is implemented in GitHub
 Actions, and is a two-stage process. The first stage builds and tests the
 project, while the second stage deploys it to AWS, using CodeDeploy. This
 application is hosted in a single EC2 instance.
@@ -69,8 +69,12 @@ application is hosted in a single EC2 instance.
 ## Running the application
 
 * Set the environment variable `TWITTER_API_BEARER_TOKEN` to your own value
-* `docker-compose build --no-cache`
-* `docker-compose up`
+
+```bash
+docker-compose build
+docker-compose up
+```
+
 * [http://localhost:8080](http://localhost:8080)
 
 ## How could this be better?
