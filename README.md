@@ -99,7 +99,7 @@ am a bit rusty on Angular and coming up to speed here was not the best use of ti
 
 ### Infrastructure improvements
 
-This was the first time I deployed an application to AWS, but I am satisified
+This was the first time I deployed an application to AWS, but I am satisfied
 with the process and what I have learned. It is really exciting to make changes
 and see them pushed to production, and makes the entire process easier.
 
