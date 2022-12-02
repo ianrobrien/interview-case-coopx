@@ -2,9 +2,11 @@ package no.obrien.twitflow;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import com.twitter.models.*;
+import com.twitter.models.Expansions;
+import com.twitter.models.FilteredStreamingTweetOneOf;
+import com.twitter.models.Tweet;
+import com.twitter.models.User;
 import no.obrien.twitflow.mapper.TweetDtoMapper;
-import no.obrien.twitflow.model.TweetDto;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

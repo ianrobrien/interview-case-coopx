@@ -2,7 +2,6 @@ package no.obrien.twitflow.provider;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.twitter.models.FilteredStreamingTweetOneOf;
-import com.twitter.models.StreamingTweet;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import no.obrien.twitflow.config.TwitterApiConfig;
@@ -11,10 +10,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.config.CookieSpecs;
 import org.apache.http.client.config.RequestConfig;
-import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.utils.URIBuilder;
-import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.springframework.messaging.simp.SimpMessageSendingOperations;
 import org.springframework.stereotype.Component;
