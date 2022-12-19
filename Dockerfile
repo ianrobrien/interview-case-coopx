@@ -1,7 +1,7 @@
 #
 # Build stage
 #
-FROM maven:3.8.6-amazoncorretto-19@sha256:ee367118a3cd9423b556b36065958dd25a02bfc93b39083863cae6ee4e0b24d6 AS build
+FROM maven:3.8.6-amazoncorretto-19@sha256:23f52a3cfee7cf5bf8373029c439b480a49810e9ee73ec341c95f0b1d263b810 AS build
 COPY . /home/app/
 ARG TWITTER_API_BEARER_TOKEN=$TWITTER_API_BEARER_TOKEN
 RUN mvn -f /home/app/pom.xml clean package -DskipTests
