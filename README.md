@@ -1,6 +1,6 @@
-# twitflow
+# interview-case-coopx
 
-[![Continuous Integration](https://github.com/ianrobrien/twitflow-2/actions/workflows/ci.yaml/badge.svg)](https://github.com/ianrobrien/twitflow-2/actions/workflows/ci.yaml)
+[![Continuous Integration](https://github.com/ianrobrien/interview-case-coopx/actions/workflows/ci.yaml/badge.svg)](https://github.com/ianrobrien/interview-case-coopx/actions/workflows/ci.yaml)
 
 This repository is a demonstration of making a web application to stream realtime
 Tweets from Twitter using the [Twitter API](https://developer.twitter.com/en/docs/twitter-api)
