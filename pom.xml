@@ -18,7 +18,7 @@
 
   <properties>
     <java.version>19</java.version>
-    <spring-boot-starter-websocket.version>3.0.2</spring-boot-starter-websocket.version>
+    <spring-boot-starter-websocket.version>3.0.3</spring-boot-starter-websocket.version>
     <spring-boot-configuration-processor.version>3.0.2</spring-boot-configuration-processor.version>
     <lombok.version>1.18.26</lombok.version>
     <mapstruct.version>1.5.3.Final</mapstruct.version>
