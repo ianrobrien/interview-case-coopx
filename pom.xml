@@ -18,8 +18,7 @@
 
   <properties>
     <java.version>19</java.version>
-    <spring-boot-starter-websocket.version>3.0.3</spring-boot-starter-websocket.version>
-    <spring-boot-configuration-processor.version>3.0.3</spring-boot-configuration-processor.version>
+    <spring.version>3.0.3</spring.version>
     <lombok.version>1.18.26</lombok.version>
     <mapstruct.version>1.5.3.Final</mapstruct.version>
     <mapstruct-processor.version>1.5.3.Final</mapstruct-processor.version>
@@ -39,9 +38,7 @@
     <gson-fire.version>1.8.5</gson-fire.version>
     <jsr305.version>3.0.2</jsr305.version>
     <jackson-datatype-jsr310.version>2.14.2</jackson-datatype-jsr310.version>
-    <spring-boot-starter-test.version>3.0.3</spring-boot-starter-test.version>
     <junit-jupiter-api.version>5.9.2</junit-jupiter-api.version>
-    <spring-boot-maven-plugin.version>3.0.3</spring-boot-maven-plugin.version>
     <openapi-generator-maven-plugin.version>6.4.0</openapi-generator-maven-plugin.version>
     <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
     <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
@@ -51,14 +48,14 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-websocket</artifactId>
-      <version>${spring-boot-starter-websocket.version}</version>
+      <version>${spring.version}</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-configuration-processor</artifactId>
       <optional>true</optional>
-      <version>${spring-boot-configuration-processor.version}</version>
+      <version>${spring.version}</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
@@ -166,7 +163,7 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
-      <version>${spring-boot-starter-test.version}</version>
+      <version>${spring.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -182,7 +179,7 @@
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
-        <version>${spring-boot-maven-plugin.version}</version>
+        <version>${spring.version}</version>
         <configuration>
           <excludes>
             <exclude>
