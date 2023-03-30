@@ -1,4 +1,4 @@
-title twitflow sequence diagram
+title Twitflow sequence diagram
 
 Client->Twitflow Controller: Start stream message
 Twitflow Controller->+Twitter API: Start streaming request

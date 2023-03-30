@@ -108,5 +108,7 @@ authentication, monitoring, logging and alerting.
 
 ## Presentation
 
+<!-- vale off -->
 The PowerPoint presentation [twitflow-presentation.pptx](doc/twitflow-presentation.pptx)
 will be presented.
+<!-- vale on -->
