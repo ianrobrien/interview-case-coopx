@@ -1,3 +1,4 @@
+---
 twitter:
   api:
     bearer-token: not-a-bearer-token

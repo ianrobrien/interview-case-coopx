@@ -1,7 +1,11 @@
+---
 name: Continuous Integration
 
 on:
-  push: { }
+  pull_request:
+  push:
+    branches:
+      - main
 
 permissions:
   contents: write
@@ -18,9 +22,27 @@ jobs:
           vale_flags: "--glob=*.{md,txt}"
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          # Full git history is needed to get a proper list of changed files
+          # within `super-linter`
+          fetch-depth: 0
+      - uses: github/super-linter@v4
+        env:
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_HTML: false
+          VALIDATE_JSCPD: false
+          VALIDATE_NATURAL_LANGUAGE: false
+          VALIDATE_JAVASCRIPT_ES: false
+          VALIDATE_JAVASCRIPT_STANDARD: false
+          IGNORE_GENERATED_FILES: true
+          FILTER_REGEX_EXCLUDE: twitter.api.json
   build:
-    needs: [ vale ]
+    needs: [ vale, lint ]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
