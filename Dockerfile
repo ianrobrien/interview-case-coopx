@@ -13,4 +13,4 @@ FROM amazoncorretto:20-alpine3.16-jdk@sha256:45022c589e2cf0236723f7bc9e2b9341d96
 COPY --from=build /home/app/target/twitflow-0.0.1-SNAPSHOT.jar /usr/local/lib/twitflow.jar
 ARG TWITTER_API_BEARER_TOKEN=$TWITTER_API_BEARER_TOKEN
 EXPOSE 8080
-ENTRYPOINT java -jar /usr/local/lib/twitflow.jar "--twitter.api.bearer-token=$TWITTER_API_BEARER_TOKEN"
+ENTRYPOINT ["java", "-jar", "/usr/local/lib/twitflow.jar", "--twitter.api.bearer-token=$TWITTER_API_BEARER_TOKEN"]

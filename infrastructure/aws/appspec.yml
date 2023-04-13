@@ -1,3 +1,4 @@
+---
 version: 0.0
 os: linux
 files:
@@ -5,10 +6,10 @@ files:
     destination: /home/ec2-user/twitflow/
 hooks:
   AfterInstall:
-   - location: setup.sh
-     timeout: 300
-     runas: root
+    - location: setup.sh
+      timeout: 300
+      runas: root
   ApplicationStart:
-   - location: run.sh
-     timeout: 300
-     runas: root
+    - location: run.sh
+      timeout: 300
+      runas: root
