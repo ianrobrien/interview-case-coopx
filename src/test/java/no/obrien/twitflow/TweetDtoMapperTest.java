@@ -15,27 +15,19 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class TweetDtoMapperTest {
 
-  @Autowired
-  private TweetDtoMapper tweetDtoMapper;
+  @Autowired private TweetDtoMapper tweetDtoMapper;
 
   @Test
   void fromStreamingTweet_validInput_mapsWithoutIssue() {
     OffsetDateTime now = OffsetDateTime.now();
 
-    var tweet = new Tweet()
-        .text("this is the tweet text")
-        .authorId("12345")
-        .createdAt(now);
+    var tweet = new Tweet().text("this is the tweet text").authorId("12345").createdAt(now);
 
-    var author = new User()
-        .id("12345")
-        .username("AuthorUsername");
+    var author = new User().id("12345").username("AuthorUsername");
 
     var expansions = new Expansions().addUsersItem(author);
 
-    var streamingTweet = new FilteredStreamingTweetOneOf()
-        .data(tweet)
-        .includes(expansions);
+    var streamingTweet = new FilteredStreamingTweetOneOf().data(tweet).includes(expansions);
 
     var tweetDto = tweetDtoMapper.fromStreamingTweet(streamingTweet);
 

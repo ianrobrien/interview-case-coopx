@@ -13,15 +13,19 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class TwitterApiObjectMapperTest {
 
-  @Autowired
-  private ObjectMapper twitterApiObjectMapper;
+  @Autowired private ObjectMapper twitterApiObjectMapper;
 
   @Test
   void readValue_twitterResponse_mapsToDomainObject() throws JsonProcessingException {
     @SuppressWarnings("checkstyle:linelength")
-    var json = "{\"data\":{\"author_id\":\"1393285420998447105\",\"created_at\":\"2021-10-29T16:44:06.000Z\",\"id\":\"1454126911211311113\",\"text\":\"RT @JibachuLaloutre: Imagine t'es anglophone, tu veux t'intéresser au #ZEVENT2021, tu va sur le stream avec le plus de viewers et t'as un v…\"},\"includes\":{\"users\":[{\"id\":\"1393285420998447105\",\"name\":\"Maddy uu\",\"username\":\"maddylavie\"},{\"id\":\"1127989042182799360\",\"name\":\"Surf Rock Mansion Shopkeep\",\"username\":\"JibachuLaloutre\"}]}}";
-    var streamingTweet = twitterApiObjectMapper
-        .readValue(json, FilteredStreamingTweetOneOf.class);
+    var json =
+        "{\"data\":{\"author_id\":\"1393285420998447105\",\"created_at\":\"2021-10-29T16:44:06.000Z\",\"id\":\"1454126911211311113\",\"text\":\"RT"
+            + " @JibachuLaloutre: Imagine t'es anglophone, tu veux t'intéresser au #ZEVENT2021, tu"
+            + " va sur le stream avec le plus de viewers et t'as un"
+            + " v…\"},\"includes\":{\"users\":[{\"id\":\"1393285420998447105\",\"name\":\"Maddy"
+            + " uu\",\"username\":\"maddylavie\"},{\"id\":\"1127989042182799360\",\"name\":\"Surf"
+            + " Rock Mansion Shopkeep\",\"username\":\"JibachuLaloutre\"}]}}";
+    var streamingTweet = twitterApiObjectMapper.readValue(json, FilteredStreamingTweetOneOf.class);
 
     assertNotNull(streamingTweet.getData());
     assertNotNull(streamingTweet.getIncludes());

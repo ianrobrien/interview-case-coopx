@@ -37,9 +37,7 @@ public class TwitterApiProvider {
   // Indicates that there is a stream open between the API Provider and Twitter
   private boolean isConnectionOpen;
 
-  /**
-   * Open a streaming connection to Twitter and send tweets to the message queue
-   */
+  /** Open a streaming connection to Twitter and send tweets to the message queue */
   public void openTwitterTweetStream() {
     if (this.isConnectionOpen) {
       return;
@@ -51,24 +49,26 @@ public class TwitterApiProvider {
     this.keepConnectionOpen = true;
     this.isConnectionOpen = true;
 
-    var httpClient = HttpClients.custom()
-        .setDefaultRequestConfig(RequestConfig.custom()
-            .setCookieSpec(CookieSpecs.STANDARD).build()).build();
+    var httpClient =
+        HttpClients.custom()
+            .setDefaultRequestConfig(
+                RequestConfig.custom().setCookieSpec(CookieSpecs.STANDARD).build())
+            .build();
 
     try (httpClient) {
       var uriBuilder = new URIBuilder(TWITTER_STREAM_URL);
 
       var httpGet = new HttpGet(uriBuilder.build());
-      httpGet.setHeader("Authorization",
-          String.format("Bearer %s", twitterApiConfig.getTwitterApiBearerToken()));
+      httpGet.setHeader(
+          "Authorization", String.format("Bearer %s", twitterApiConfig.getTwitterApiBearerToken()));
 
       try (var response = httpClient.execute(httpGet)) {
         if (response.getStatusLine().getStatusCode() != HttpStatus.SC_OK) {
           throw new RuntimeException(
               "Did not get OK response from Twitter. Received: " + response.getStatusLine());
         }
-        try (var reader = new BufferedReader(
-            new InputStreamReader((response.getEntity().getContent())))) {
+        try (var reader =
+            new BufferedReader(new InputStreamReader((response.getEntity().getContent())))) {
           var tweetJson = reader.readLine();
           while (tweetJson != null) {
             this.sendTweetMessage(tweetJson);
@@ -86,17 +86,15 @@ public class TwitterApiProvider {
     }
   }
 
-  /**
-   * Stop streaming Tweets from Twitter, closing the streams
-   */
+  /** Stop streaming Tweets from Twitter, closing the streams */
   public void closeTwitterTweetStream() {
     this.keepConnectionOpen = false;
   }
 
   private void sendTweetMessage(String tweetJson) {
     try {
-      var streamingTweet = twitterApiObjectMapper.readValue(tweetJson,
-          FilteredStreamingTweetOneOf.class);
+      var streamingTweet =
+          twitterApiObjectMapper.readValue(tweetJson, FilteredStreamingTweetOneOf.class);
       simpMessageSendingOperations.convertAndSend(
           "/topic/tweets", tweetDtoMapper.fromStreamingTweet(streamingTweet));
     } catch (Exception ex) {
