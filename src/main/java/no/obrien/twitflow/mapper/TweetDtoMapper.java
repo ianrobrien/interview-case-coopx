@@ -12,8 +12,8 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring")
 public interface TweetDtoMapper {
 
-  DateTimeFormatter HUMAN_READABLE_DATE_TIME_FORMAT = DateTimeFormatter
-      .ofPattern("yyyy-MM-dd HH:mm:ss");
+  DateTimeFormatter HUMAN_READABLE_DATE_TIME_FORMAT =
+      DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
   /**
    * Maps a StreamingTweet from the Twitter domain to a TweetDto instance in the twitflow domain
@@ -43,9 +43,7 @@ public interface TweetDtoMapper {
       return null;
     }
 
-    return streamingTweet.getIncludes()
-        .getUsers()
-        .stream()
+    return streamingTweet.getIncludes().getUsers().stream()
         .filter(u -> Objects.equals(u.getId(), streamingTweet.getData().getAuthorId()))
         .map(User::getUsername)
         .findFirst()
