@@ -36,7 +36,7 @@
     <gson.version>2.10.1</gson.version>
     <gson-fire.version>1.8.5</gson-fire.version>
     <jsr305.version>3.0.2</jsr305.version>
-    <jackson-datatype-jsr310.version>2.14.2</jackson-datatype-jsr310.version>
+    <jackson-datatype-jsr310.version>2.15.0</jackson-datatype-jsr310.version>
     <junit-jupiter-api.version>5.9.2</junit-jupiter-api.version>
     <openapi-generator-maven-plugin.version>6.5.0</openapi-generator-maven-plugin.version>
     <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
