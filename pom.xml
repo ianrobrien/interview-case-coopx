@@ -19,37 +19,41 @@
 
   <properties>
     <java.version>19</java.version>
+    <mapstruct.version>1.5.5.Final</mapstruct.version>
+    <lombok.version>1.18.26</lombok.version>
+    <spring-boot.version>3.0.6</spring-boot.version>
+    <okhttp.version>4.10.0</okhttp.version>
   </properties>
 
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-websocket</artifactId>
-      <version>3.0.6</version>
+      <version>${spring-boot.version}</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-configuration-processor</artifactId>
       <optional>true</optional>
-      <version>3.0.6</version>
+      <version>${spring-boot.version}</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
-      <version>1.18.26</version>
+      <version>${lombok.version}</version>
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>org.mapstruct</groupId>
       <artifactId>mapstruct</artifactId>
-      <version>1.5.5.Final</version>
+      <version>${mapstruct.version}</version>
     </dependency>
     <dependency>
       <groupId>org.mapstruct</groupId>
       <artifactId>mapstruct-processor</artifactId>
-      <version>1.5.5.Final</version>
+      <version>${mapstruct.version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.commons</groupId>
@@ -103,12 +107,12 @@
     <dependency>
       <groupId>com.squareup.okhttp3</groupId>
       <artifactId>okhttp</artifactId>
-      <version>4.10.0</version>
+      <version>${okhttp.version}</version>
     </dependency>
     <dependency>
       <groupId>com.squareup.okhttp3</groupId>
       <artifactId>logging-interceptor</artifactId>
-      <version>4.10.0</version>
+      <version>${okhttp.version}</version>
     </dependency>
     <dependency>
       <groupId>io.springfox</groupId>
@@ -147,7 +151,7 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
-      <version>3.0.6</version>
+      <version>${spring-boot.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -163,7 +167,7 @@
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
-        <version>3.0.6</version>
+        <version>${spring-boot.version}</version>
         <configuration>
           <excludes>
             <exclude>
@@ -208,12 +212,12 @@
             <path>
               <groupId>org.mapstruct</groupId>
               <artifactId>mapstruct-processor</artifactId>
-              <version>1.5.5.Final</version>
+              <version>${mapstruct.version}</version>
             </path>
             <path>
               <groupId>org.projectlombok</groupId>
               <artifactId>lombok</artifactId>
-              <version>1.18.26</version>
+              <version>${lombok.version}</version>
             </path>
             <path>
               <groupId>org.projectlombok</groupId>
