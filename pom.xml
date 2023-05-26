@@ -18,7 +18,7 @@
   <description>twitflow</description>
 
   <properties>
-    <java.version>19</java.version>
+    <java.version>20</java.version>
     <mapstruct.version>1.5.5.Final</mapstruct.version>
     <lombok.version>1.18.28</lombok.version>
     <spring-boot.version>3.1.0</spring-boot.version>
