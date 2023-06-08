@@ -40,6 +40,7 @@ jobs:
           VALIDATE_NATURAL_LANGUAGE: false
           VALIDATE_JAVASCRIPT_ES: false
           VALIDATE_JAVASCRIPT_STANDARD: false
+          VALIDATE_SHELL_SHFMT: false
           IGNORE_GENERATED_FILES: true
           FILTER_REGEX_EXCLUDE: twitter.api.json
   build:
