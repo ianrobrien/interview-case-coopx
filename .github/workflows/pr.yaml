@@ -44,7 +44,7 @@ jobs:
           IGNORE_GENERATED_FILES: true
           FILTER_REGEX_EXCLUDE: twitter.api.json
   build:
-    needs: [ vale, lint ]
+    needs: [vale, lint]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
