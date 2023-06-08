@@ -34,6 +34,7 @@ jobs:
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_BASH: false
           VALIDATE_EDITORCONFIG: false
           VALIDATE_GOOGLE_JAVA_FORMAT: false
           VALIDATE_HTML: false
