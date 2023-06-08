@@ -2,14 +2,16 @@ package no.obrien.twitflow.mapper;
 
 import com.twitter.models.FilteredStreamingTweetOneOf;
 import com.twitter.models.User;
-import java.time.OffsetDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Objects;
 import no.obrien.twitflow.model.TweetDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.MappingConstants.ComponentModel;
 
-@Mapper(componentModel = "spring")
+import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Objects;
+
+@Mapper(componentModel = ComponentModel.SPRING)
 public interface TweetDtoMapper {
 
   DateTimeFormatter HUMAN_READABLE_DATE_TIME_FORMAT =
