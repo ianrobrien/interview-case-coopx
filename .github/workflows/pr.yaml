@@ -34,7 +34,6 @@ jobs:
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VALIDATE_BASH: false
           VALIDATE_EDITORCONFIG: false
           VALIDATE_GOOGLE_JAVA_FORMAT: false
           VALIDATE_HTML: false
@@ -42,7 +41,6 @@ jobs:
           VALIDATE_NATURAL_LANGUAGE: false
           VALIDATE_JAVASCRIPT_ES: false
           VALIDATE_JAVASCRIPT_STANDARD: false
-          VALIDATE_SHELL_SHFMT: false
           IGNORE_GENERATED_FILES: true
           FILTER_REGEX_EXCLUDE: twitter.api.json
   build:
