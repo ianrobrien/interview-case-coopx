@@ -9,27 +9,7 @@ Tweets from Twitter using the [Twitter API](https://developer.twitter.com/en/doc
 
 Please see the [PDF document](doc/coopx-case.pdf) in the `doc` folder.
 
-## Attempted Solutions
-
-### Solution 1 - Java Backend/Angular Frontend
-
-In this solution, the idea was to create a Java microservice that would consume
-the Twitter API and expose an API to the client. The Twitter API specification
-was converted into client code using [OpenAPI Generator](https://openapi-generator.tech/).
-The same generator was used for the service API.
-
-The issue here is that the generated models did not support streaming, either
-from the Twitter API or from the Java service.
-
-Development work on the Angular frontend here was wasted time.
-
-### Solution 2 - Angular Frontend
-
-In this solution, I attempted to simply create an Angular frontend and call the
-Twitter API from there. However, this resulted in the [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
-issue and I did not want to spend more time here as this seemed hacky.
-
-### Solution 3 - Java Backend (with WebSockets)/Simple HTML Frontend
+## Proposed Solution - Java Backend (with WebSockets)/Simple HTML Frontend
 
 I remembered using RabbitMQ at a previous position to handle asynchronous
 message sending as a result of changes in an API. This allowed for
