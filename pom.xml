@@ -20,7 +20,7 @@
   <properties>
     <java.version>20</java.version>
     <mapstruct.version>1.5.5.Final</mapstruct.version>
-    <lombok.version>1.18.28</lombok.version>
+    <lombok.version>1.18.30</lombok.version>
     <okhttp.version>4.10.0</okhttp.version>
   </properties>
 
