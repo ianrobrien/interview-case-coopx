@@ -9,7 +9,7 @@ RUN mvn -f /home/app/pom.xml clean package -DskipTests
 #
 # Package stage
 #
-FROM eclipse-temurin:21-alpine@sha256:0590276e28eadad32040b43c6564a991a3860049155be0c69e7d3632ead05f66
+FROM eclipse-temurin:21-alpine@sha256:47fd7a008abda160e1798419c18081284a7563f2afdfd5d230db5ed757268fcf
 COPY --from=build /home/app/target/twitflow-0.0.1-SNAPSHOT.jar /usr/local/lib/twitflow.jar
 ARG TWITTER_API_BEARER_TOKEN=$TWITTER_API_BEARER_TOKEN
 EXPOSE 8080
