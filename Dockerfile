@@ -1,7 +1,7 @@
 #
 # Build stage
 #
-FROM maven:3.9-eclipse-temurin-8-alpine@sha256:a59e827278c886540a40a3a76ccb6100769407db9d3a8daeb91887cc6b943da0 AS build
+FROM maven:3.9.8-eclipse-temurin-22-alpine@sha256:63dc926762f2cf571b11d421e3c9281b8e8ae81e4ffd32cb48eb9ca8068e39a9 AS build
 COPY . /home/app/
 ARG TWITTER_API_BEARER_TOKEN=$TWITTER_API_BEARER_TOKEN
 RUN mvn -f /home/app/pom.xml clean package -DskipTests
